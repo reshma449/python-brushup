@@ -1,0 +1,27 @@
+class Dog:
+
+    # class attribute
+    attr1 = "mammal"
+
+    # Instance attribute
+    def __init__(self, name):
+        self.name = name
+
+# Driver code
+# Object instantiation
+Rodger = Dog("Rodger")
+Tommy = Dog("Tommy")
+
+# Accessing class attributes
+print("Rodger is a {}".format(Dog.attr1)) # more explicit way to access the class attribute
+print("Tommy is also a {}".format(Tommy.__class__.attr1)) # using the __class__ attribute of the instance.. This is less common but still valid
+print("Tommy is also a {}".format(Tommy.attr1)) #Using the Instance & directly call class attribute, confusion if Instance attribute with the same name as the class attribute
+
+# Accessing instance attributes
+print("My name is {}".format(Rodger.name))  # Using .format()
+print("My dog's name is {} and he is {} years old.".format(name, age))  # Using .format()
+print("My name is " + Rodger.name)           # Using +
+print(f"My name is {Tommy.name}")             # Using f-string
+
+
+
