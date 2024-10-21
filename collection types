@@ -1,0 +1,101 @@
+List
+ A collection which is ordered, changeable (already existing in list can be changed and new can be added/ deleted ), and allows duplicate members.
+# Creating a list
+fruits = ['apple', 'banana', 'orange', 'banana']
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+
+# Changing an element
+fruits[1] = 'kiwi'
+print(fruits)  # Output: ['apple', 'kiwi', 'orange', 'banana']
+
+# Adding an element
+fruits.append('mango')
+print(fruits)  # Output: ['apple', 'kiwi', 'orange', 'banana', 'mango']
+
+Tuple
+Definition: A collection which is ordered and unchangeable, allowing duplicate members.
+# Creating a tuple
+colors = ('red', 'green', 'blue', 'green')
+
+# Accessing elements
+print(colors[1])  # Output: green
+
+# Trying to change an element will raise an error
+# colors[1] = 'yellow'  # TypeError: 'tuple' object does not support item assignment
+
+# Tuples can be used as dictionary keys due to their immutability - i unber and google maps use tuples than list 
+point = (10, 20)  # Tuple as a point in 2D space
+
+Set:
+A collection which is unordered, unchangeable (existing items in the set are unchangeble , but you can add or remove items), and does not allow duplicate members.
+# Creating a set
+unique_numbers = {1, 2, 3, 2, 1}
+
+# Displaying the set
+print(unique_numbers)  # Output: {1, 2, 3} (order may vary)
+
+# Adding an element
+unique_numbers.add(4)
+print(unique_numbers)  # Output: {1, 2, 3, 4}
+
+# Removing an element
+unique_numbers.remove(2)
+print(unique_numbers)  # Output: {1, 3, 4}
+
+Dictionary like objects key value pair 
+A collection which is ordered (as of Python 3.7), changeable, and does not allow duplicate members. Consists of key-value pairs
+# Creating a dictionary
+student = {
+    'name': 'Alice',
+    'age': 21,
+    'courses': ['Math', 'Science']
+}
+
+# Accessing values
+print(student['name'])  # Output: Alice
+
+# Changing a value
+student['age'] = 22
+print(student)  # Output: {'name': 'Alice', 'age': 22, 'courses': ['Math', 'Science']}
+
+# Adding a new key-value pair
+student['grade'] = 'A'
+print(student)  # Output: {'name': 'Alice', 'age': 22, 'courses': ['Math', 'Science'], 'grade': 'A'}
+
+
+Tuple real life use cases - in uber or for location
+
+
+
+
+# Defining a point in 2D space
+point = (3, 4)  # (x, y) coordinates
+
+# Accessing the coordinates
+x_coordinate = point[0]
+y_coordinate = point[1]
+
+print(f"Point coordinates: ({x_coordinate}, {y_coordinate})")  # Output: Point coordinates: (3, 4)
+
+# Function to calculate the distance from the origin (0, 0)
+def distance_from_origin(point):
+    x, y = point  # Unpacking the tuple
+    distance = (x**2 + y**2) ** 0.5  # Using the Pythagorean theorem
+    return distance
+
+# Calculating the distance from the origin
+distance = distance_from_origin(point)
+print(f"Distance from origin: {distance:.2f}")  # Output: Distance from origin: 5.00
+
+# Function to move the point by a given delta (dx, dy)
+def move_point(point, delta):
+    x, y = point  # Unpacking the original point
+    dx, dy = delta  # Unpacking the delta
+    new_point = (x + dx, y + dy)  # Creating a new point
+    return new_point
+
+# Moving the point by (2, 3)
+new_point = move_point(point, (2, 3))
+print(f"New point after moving: {new_point}")  # Output: New point after moving: (5, 7)
