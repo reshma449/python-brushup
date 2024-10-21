@@ -1,0 +1,351 @@
+Python uses indentation to indicate a block of code
+if 5 > 2:
+print("Five is greater than two!") # error intendation its python idiot 
+if 5 > 2:
+ print("Five is greater than two!") 
+  print("Five is greater than two!") #error 
+
+x = "Hello World"	str	
+x = 20	int	
+x = 20.5	float	
+x = 1j	complex	
+x = ["apple", "banana", "cherry"]	list	
+x = ("apple", "banana", "cherry")	tuple	
+x = range(6)	range	
+x = {"name" : "John", "age" : 36}	dict	
+x = {"apple", "banana", "cherry"}	set	
+x = frozenset({"apple", "banana", "cherry"})	frozenset	
+x = True	bool	
+x = b"Hello"	bytes	
+x = bytearray(5)	bytearray	
+x = memoryview(bytes(5))	memoryview	
+x = None	NoneType
+
+# A simple list
+fruits = ['apple', 'banana', 'cherry']
+
+# Using enumerate
+for index, value in enumerate(fruits):
+    print(f"Index: {index}, Value: {value}")
+
+commenting 
+#This is a comment
+#written in
+#more than just one line
+print("Hello, World!")
+
+ 3 quotes 
+"""
+This is a comment
+written in
+more than just one line
+"""
+print("Hello, World!")
+
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+
+x = y = z = "Orange"
+print(x)
+print(y)
+print(z)
+
+if -else
+txt = "The best things in life are !"
+if "free" in txt:
+    print("Yes, 'free' is present.")
+elif "best" in txt:
+    print("Yes, 'best' is present.")
+else:
+    print('pabu')
+
+a = " Hello, World! "
+print(a.strip()) # returns "Hello, World!"
+
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+
+Create an f-string:- format
+age = 36
+txt = f"My name is John, I am {age}"
+print(txt)
+
+1. capitalize()
+Converts the first character of the string to uppercase.
+
+
+s = "hello world"
+print(s.capitalize())  # Output: "Hello world"
+2. casefold()
+Converts the string to lowercase, suitable for case-insensitive comparisons.
+
+
+s = "Hello World"
+print(s.casefold())  # Output: "hello world"
+3. center()
+Centers the string within a specified width.
+
+
+s = "hello"
+print(s.center(10, '*'))  # Output: "**hello****"
+4. count()
+Counts the number of occurrences of a substring.
+
+
+s = "banana"
+print(s.count('a'))  # Output: 3
+5. encode()
+Encodes the string using the specified encoding.
+
+
+s = "hello"
+encoded = s.encode('utf-8')
+print(encoded)  # Output: b'hello'
+6. endswith()
+Checks if the string ends with the specified suffix.
+
+
+s = "hello world"
+print(s.endswith("world"))  # Output: True
+7. expandtabs()
+Sets the tab size of the string.
+
+
+s = "hello\tworld"
+print(s.expandtabs(4))  # Output: "hello world"
+8. find()
+Searches for a substring and returns its position.
+
+
+s = "hello world"
+print(s.find('world'))  # Output: 6
+9. format()
+Formats specified values in the string.
+
+
+name = "Alice"
+age = 30
+print("My name is {} and I am {} years old.".format(name, age))
+# Output: "My name is Alice and I am 30 years old."
+10. format_map()
+Formats specified values using a mapping (like a dictionary).
+
+
+data = {"name": "Alice", "age": 30}
+print("My name is {name} and I am {age} years old.".format_map(data))
+# Output: "My name is Alice and I am 30 years old."
+11. index()
+Searches for a substring and returns its position (raises an error if not found).
+
+
+s = "hello world"
+print(s.index('o'))  # Output: 4
+# print(s.index('x'))  # Would raise ValueError
+12. isalnum()
+Checks if all characters in the string are alphanumeric.
+
+
+s = "hello123"
+print(s.isalnum())  # Output: True
+13. isalpha()
+Checks if all characters in the string are alphabetic.
+
+
+s = "hello"
+print(s.isalpha())  # Output: True
+14. isascii()
+Checks if all characters in the string are ASCII characters.
+
+
+s = "hello"
+print(s.isascii())  # Output: True
+15. isdecimal()
+Checks if all characters in the string are decimals.
+
+
+s = "12345"
+print(s.isdecimal())  # Output: True
+16. isdigit()
+Checks if all characters in the string are digits.
+
+
+s = "12345"
+print(s.isdigit())  # Output: True
+17. isidentifier()
+Checks if the string is a valid Python identifier.
+
+
+s = "variable_name"
+print(s.isidentifier())  # Output: True
+18. islower()
+Checks if all characters in the string are lowercase.
+
+
+s = "hello"
+print(s.islower())  # Output: True
+19. isnumeric()
+Checks if all characters in the string are numeric.
+
+
+s = "12345"
+print(s.isnumeric())  # Output: True
+20. isprintable()
+Checks if all characters in the string are printable.
+
+
+s = "hello\n"
+print(s.isprintable())  # Output: False
+21. isspace()
+Checks if all characters in the string are whitespace.
+
+
+s = "   "
+print(s.isspace())  # Output: True
+22. istitle()
+Checks if the string is in title case.
+
+
+s = "Hello World"
+print(s.istitle())  # Output: True
+23. isupper()
+Checks if all characters in the string are uppercase.
+
+
+s = "HELLO"
+print(s.isupper())  # Output: True
+24. join()
+Joins elements of an iterable with the string.
+
+
+words = ['Hello', 'World']
+print(' '.join(words))  # Output: "Hello World"
+25. ljust()
+Returns a left-justified version of the string.
+
+
+s = "hello"
+print(s.ljust(10, '-'))  # Output: "hello-----"
+26. lower()
+Converts the string to lowercase.
+
+
+s = "HELLO"
+print(s.lower())  # Output: "hello"
+27. lstrip()
+Returns a left-trimmed version of the string.
+
+
+s = "   hello"
+print(s.lstrip())  # Output: "hello"
+28. maketrans()
+Creates a translation table for use in translations.
+
+
+trans = str.maketrans("abc", "123")
+s = "abcde"
+print(s.translate(trans))  # Output: "123de"
+29. partition()
+Partitions the string into three parts: before, separator, and after.
+
+
+s = "hello world"
+print(s.partition(' '))  # Output: ('hello', ' ', 'world')
+30. replace()
+Replaces a specified value with another value.
+
+
+s = "hello world"
+print(s.replace('world', 'there'))  # Output: "hello there"
+31. rfind()
+Finds the last occurrence of a substring.
+
+
+s = "hello world"
+print(s.rfind('o'))  # Output: 7
+32. rindex()
+Finds the last occurrence of a substring (raises an error if not found).
+
+
+s = "hello world"
+print(s.rindex('o'))  # Output: 7
+# print(s.rindex('x'))  # Would raise ValueError
+33. rjust()
+Returns a right-justified version of the string.
+
+
+s = "hello"
+print(s.rjust(10, '-'))  # Output: "-----hello"
+34. rpartition()
+Partitions the string into three parts, searching from the right.
+
+
+s = "hello world"
+print(s.rpartition(' '))  # Output: ('hello', ' ', 'world')
+35. rsplit()
+Splits the string from the right.
+
+
+s = "hello world hello"
+print(s.rsplit(' ', 1))  # Output: ['hello world', 'hello']
+36. rstrip()
+Returns a right-trimmed version of the string.
+
+
+s = "hello   "
+print(s.rstrip())  # Output: "hello"
+37. split()
+Splits the string at the specified separator.
+
+
+s = "hello world"
+print(s.split(' '))  # Output: ['hello', 'world']
+38. splitlines()
+Splits the string at line breaks.
+
+
+s = "hello\nworld"
+print(s.splitlines())  # Output: ['hello', 'world']
+39. startswith()
+Checks if the string starts with the specified prefix.
+
+
+s = "hello world"
+print(s.startswith("hello"))  # Output: True
+40. strip()
+Returns a trimmed version of the string.
+
+
+s = "   hello   "
+print(s.strip())  # Output: "hello"
+41. swapcase()
+Swaps the case of each character.
+
+
+s = "Hello World"
+print(s.swapcase())  # Output: "hELLO wORLD"
+42. title()
+Converts the first character of each word to uppercase.
+
+
+s = "hello world"
+print(s.title())  # Output: "Hello World"
+43. translate()
+Translates characters based on a translation table.
+
+
+trans = str.maketrans("abc", "123")
+s = "abcdef"
+print(s.translate(trans))  # Output: "123def"
+44. upper()
+Converts the string to uppercase.
+
+
+s = "hello"
+print(s.upper())  # Output: "HELLO"
+45. zfill()
+Fills the string with zeros
