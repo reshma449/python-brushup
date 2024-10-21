@@ -1,0 +1,141 @@
+Python Polymorphism
+In object oriented Programming Python, Polymorphism simply means having many forms
+Polymorphism in Python
+This code demonstrates the concept of Python oops inheritance and method overriding in Python classes.
+It shows how subclasses can override methods defined in their parent class to provide specific behavior while still inheriting other methods from the parent class.
+class Bird:
+  
+    def intro(self):
+        print("There are many types of birds.")
+
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+
+class sparrow(Bird):
+  
+    def flight(self):
+        print("Sparrows can fly.")
+
+class ostrich(Bird):
+
+    def flight(self):
+        print("Ostriches cannot fly.")
+
+obj_bird = Bird()
+obj_spr = sparrow()
+obj_ost = ostrich()
+
+obj_bird.intro()
+obj_bird.flight()
+
+obj_spr.intro()
+obj_spr.flight()
+
+obj_ost.intro()
+obj_ost.flight()
+
+
+Encapsulation :
+
+wrapping data and the methods that work on data within one unit.
+This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data. 
+To prevent accidental change, an object’s variable can only be changed by an object’s method. Those types of variables are known as private variables.
+demonstrate private members
+# "__" double underscore represents private attribute. 
+# Private attributes start with "__".
+
+# Creating a Base class
+class Base:
+    def __init__(self):
+        self.a = "GeeksforGeeks"
+        self.__c = "GeeksforGeeks" 
+
+# Creating a derived class
+class Derived(Base):
+    def __init__(self):
+
+        # Calling constructor of
+        # Base class
+        Base.__init__(self)
+        print("Calling private member of base class: ")
+        print(self.__c) (it is not accessable here and this doesnot print ) 
+
+
+# Driver code
+obj1 = Base()
+print(obj1.a)
+
+
+
+Data Abstraction
+
+:Data Abstraction in Python can be achieved by creating abstract classes
+It hides unnecessary code details from the user. Also,  when we do not want to give out sensitive parts of our code implementation and this is where data abstraction came.
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.__length = length  # Private attribute
+        self.__width = width    # Private attribute
+
+    def area(self):
+        return self.__length * self.__width
+
+    def perimeter(self):
+        return 2 * (self.__length + self.__width)
+
+rect = Rectangle(5, 3)
+print(f"Area: {rect.area()}")          # Output: Area: 15
+print(f"Perimeter: {rect.perimeter()}")  # Output: Perimeter: 16
+
+# print(rect.__length)  # This will raise an AttributeError as length and width are private attributes
+
+
+
+
+Inheritance in Python
+
+The Employee class inherits from the Person class. We can use the methods of the person class through the employee class as seen in the display function in the above code. 
+A child class can also modify the behavior of the parent class as seen through the details() method.
+ Python code to demonstrate how parent constructors
+# are called.
+
+# parent class
+class Person(object):
+
+    # __init__ is known as the constructor
+    def __init__(self, name, idnumber):
+        self.name = name
+        self.idnumber = idnumber
+
+    def display(self):
+        print(self.name)
+        print(self.idnumber)
+        
+    def details(self):
+        print("My name is {}".format(self.name))
+        print("IdNumber: {}".format(self.idnumber))
+    
+# child class
+class Employee(Person):
+    def __init__(self, name, idnumber, salary, post):
+        self.salary = salary
+        self.post = post
+
+        # invoking the __init__ of the parent class
+        Person.__init__(self, name, idnumber)
+        
+    def details(self):
+        print("My name is {}".format(self.name))
+        print("IdNumber: {}".format(self.idnumber))
+        print("Post: {}".format(self.post))
+
+
+# creation of an object variable or an instance
+a = Employee('Rahul', 886012, 200000, "Intern")
+
+# calling a function of the class Person using
+# its instance
+a.display()
+a.details()
+
+
